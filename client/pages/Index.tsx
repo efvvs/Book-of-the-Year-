@@ -6,6 +6,8 @@ import { PersonalWorksModule } from '@/components/reading/PersonalWorksModule';
 import { QuoteWallModule } from '@/components/reading/QuoteWallModule';
 import { ContactModule } from '@/components/reading/ContactModule';
 import NavigationMap from '@/components/ui/navigation-map';
+import ScrollToTopButton from '@/components/ui/scroll-to-top-button';
+import LoadingAnimate from '@/components/ui/loading-animate';
 
 export default function Index() {
   return (
@@ -16,8 +18,9 @@ export default function Index() {
           <h1 className="text-2xl md:text-3xl font-serif font-bold text-reading-darkblue">
             📖 My Reading 2025
           </h1>
-          {/* <nav className="hidden md:flex gap-8">
-            <a href="#overview" className="text-reading-darkgreen hover:text-reading-lightbrown transition-colors font-serif">
+          <nav className="hidden md:flex gap-8">
+            <LoadingAnimate></LoadingAnimate>
+            {/* <a href="#overview" className="text-reading-darkgreen hover:text-reading-lightbrown transition-colors font-serif">
               年度概览
             </a>
             <a href="#top3" className="text-reading-darkgreen hover:text-reading-lightbrown transition-colors font-serif">
@@ -34,8 +37,8 @@ export default function Index() {
             </a>
             <a href="#quotes" className="text-reading-darkgreen hover:text-reading-lightbrown transition-colors font-serif">
               金句墙
-            </a>
-          </nav> */}
+            </a> */}
+          </nav>
         </div>
       </header>
 
@@ -46,7 +49,7 @@ export default function Index() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-serif font-bold text-reading-darkblue mb-2">
-              🗺️ 探索阅读之旅 
+                🗺️ 探索阅读之旅
               </h2>
               <p className="text-reading-darkgreen text-sm md:text-base">
                 点击地图上的地点，快速导航到不同模块
@@ -84,6 +87,9 @@ export default function Index() {
           <ContactModule />
         </section>
       </main>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTopButton />
     </div>
   );
 }

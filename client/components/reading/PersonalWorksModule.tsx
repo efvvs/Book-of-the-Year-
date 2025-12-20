@@ -513,10 +513,10 @@ export const PersonalWorksModule = () => {
             <div className="tooltip">
               <div className="profile">
                 <div className="user">
-                  <div className="img">🚶‍♀️</div>
+                  <div className="img">🧱</div>
                   <div className="details">
-                    <div className="about">穿过窄门</div>
-                    <div className="about">步入原野</div>
+                    <div className="about">开卷有得</div>
+                    <div className="about">落笔成篇</div>
                   </div>
                 </div>
               </div>
@@ -574,19 +574,7 @@ export const PersonalWorksModule = () => {
                   className={`h-40 md:h-44 bg-cover bg-center flex items-center justify-center relative overflow-hidden`}
                   style={{ backgroundImage: `url(${article.coverColor})` }}
                   >
-                    {/* Decorative pattern overlay */}
-                    {/* <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10"></div> */}
-
-                    {/* Background emoji - decorative */}
-                    {/* <div className="absolute top-4 right-4 opacity-20">
-                      <span className="text-6xl md:text-7xl">{article.emoji}</span>
-                    </div>
-                    
-                    {/* Main emoji */}
-                    {/* <span className="text-5xl md:text-6xl relative z-10 group-hover:scale-110 transition-transform duration-300 drop-shadow-lg">
-                      {article.emoji}
-                    </span> */}
-                  </div>
+z                  </div>
 
                   {/* Content */}
                   <div className="p-5 md:p-6 bg-white flex flex-col flex-grow">

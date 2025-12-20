@@ -1,42 +1,42 @@
 import React from 'react';
 
 interface City {
-    x: number;
-    y: number;
-    icon: string;
-    label: string;
-    path: string; // 路由路径或锚点ID
-    animation?: 'grow' | 'slidein' | '';
+  x: number;
+  y: number;
+  icon: string;
+  label: string;
+  path: string; // 路由路径或锚点ID
+  animation?: 'grow' | 'slidein' | '';
 }
 
 const cities: City[] = [
-    { x: 5, y: 67, icon: '🏖️', label: '年度概览', path: '#overview' },
-    { x: 32, y: 32, icon: '🎖️', label: '年度TOP 3', path: '#top3' },
-    { x: 58, y: 83, icon: '🫧', label: '阅读分析', path: '#analysis', animation: 'grow' },
-    { x: 65, y: 22, icon: '🧩', label: '全部书籍', path: '#allbooks' },
-    { x: 87, y: 58, icon: '✍️', label: '读后小记', path: '#works' },
-    { x: 94, y: 38, icon: '💬', label: '金句墙', path: '#quotes', animation: 'slidein' },
+  { x: 5, y: 67, icon: '🏖️', label: '年度概览', path: '#overview' },
+  { x: 32, y: 32, icon: '🎖️', label: '年度TOP 3', path: '#top3' },
+  { x: 58, y: 83, icon: '🫧', label: '阅读分析', path: '#analysis', animation: 'grow' },
+  { x: 65, y: 22, icon: '🧩', label: '全部书籍', path: '#allbooks' },
+  { x: 87, y: 58, icon: '✍️', label: '读后小记', path: '#works' },
+  { x: 94, y: 38, icon: '💬', label: '金句墙', path: '#quotes', animation: 'slidein' },
 ];
 
 const NavigationMap = () => {
-    const handleCityClick = (path: string) => {
-        if (path.startsWith('#')) {
-            // 锚点跳转
-            const element = document.querySelector(path);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        } else {
-            // 路由跳转（如果将来需要）
-            window.location.href = path;
-        }
-    };
+  const handleCityClick = (path: string) => {
+    if (path.startsWith('#')) {
+      // 锚点跳转
+      const element = document.querySelector(path);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // 路由跳转（如果将来需要）
+      window.location.href = path;
+    }
+  };
 
-    return (
-        <div className="navigation-map-wrapper">
-            <style>{`
+  return (
+    <div className="navigation-map-wrapper">
+      <style>{`
   .navigation-map-wrapper {
-    --city-radius: 2.5rem; /* 增大 */
+    --city-radius: 4rem; /* 增大 */
     --city-sign-color-back: #00c080;
     --city-sign-color-font: #fff;
     --city-pin-size-font: 2rem; /* 增大 */
@@ -104,7 +104,7 @@ const NavigationMap = () => {
     transition: all 300ms ease-out;
     width: 100%;
     z-index: 10;
-    font-size: 1.5rem; /* 直接设置字体大小 */
+    font-size: 2rem; /* 直接设置字体大小 */
   }
 
   /* 如果还需要更大，可以设置 emoji 的 transform 缩放 */
@@ -198,36 +198,36 @@ const NavigationMap = () => {
     100% { transform: translateX(0); }
   }
     `}</style>
-            <div className="map-container">
-                <svg viewBox="0 0 500 500" className="map-background">
-                    <rect style={{ fill: '#f5f0e5' }} width={500} height={500} />
-                    <path style={{ fill: '#90daee' }} d="M0,367.82c5.83-4.39,14.42-10.16,25.59-15.34,4.52-2.09,43.19-19.51,79.55-11.93,36.1,7.52,35.75,32.55,78.41,60.23,46.34,30.06,109.47,41.21,123.32,22.1,11.95-16.49-22.61-41.92-13.66-84.6,4.85-23.1,22.33-50.71,47.73-58.52,42.42-13.05,78.83,39.45,102.84,23.86,15.81-10.26.01-32.87,22.73-74.43,5.8-10.62,11.65-21.15,11.93-36.93.28-15.69-5.63-26.64-7.95-32.39-6.66-16.45-6.21-45.15,28.84-98.55.23,146.23.46,292.46.69,438.69H0v-132.18Z" />
-                </svg>
-                <div className="map-cities">
-                    {cities.map((city, index) => (
-                        <div
-                            key={index}
-                            className="map-city"
-                            style={{
-                                '--x': `${city.x}`,
-                                '--y': `${city.y}`,
-                            } as React.CSSProperties}
-                            onClick={() => handleCityClick(city.path)}
-                        >
-                            <div className="map-city__label">
-                                <span
-                                    data-icon={city.icon}
-                                    className={`map-city__sign ${city.animation ? `anim anim-${city.animation}` : ''}`}
-                                >
-                                    {city.label}
-                                </span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+      <div className="map-container">
+        <svg viewBox="0 0 500 500" className="map-background">
+          <rect style={{ fill: '#f5f0e5' }} width={500} height={500} />
+          <path style={{ fill: '#90daee' }} d="M0,367.82c5.83-4.39,14.42-10.16,25.59-15.34,4.52-2.09,43.19-19.51,79.55-11.93,36.1,7.52,35.75,32.55,78.41,60.23,46.34,30.06,109.47,41.21,123.32,22.1,11.95-16.49-22.61-41.92-13.66-84.6,4.85-23.1,22.33-50.71,47.73-58.52,42.42-13.05,78.83,39.45,102.84,23.86,15.81-10.26.01-32.87,22.73-74.43,5.8-10.62,11.65-21.15,11.93-36.93.28-15.69-5.63-26.64-7.95-32.39-6.66-16.45-6.21-45.15,28.84-98.55.23,146.23.46,292.46.69,438.69H0v-132.18Z" />
+        </svg>
+        <div className="map-cities">
+          {cities.map((city, index) => (
+            <div
+              key={index}
+              className="map-city"
+              style={{
+                '--x': `${city.x}`,
+                '--y': `${city.y}`,
+              } as React.CSSProperties}
+              onClick={() => handleCityClick(city.path)}
+            >
+              <div className="map-city__label">
+                <span
+                  data-icon={city.icon}
+                  className={`map-city__sign ${city.animation ? `anim anim-${city.animation}` : ''}`}
+                >
+                  {city.label}
+                </span>
+              </div>
             </div>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default NavigationMap;

@@ -575,10 +575,11 @@ export const QuoteWallModule = () => {
             <div className="tooltip">
               <div className="profile">
                 <div className="user">
-                  <div className="img">🚶‍♀️</div>
+                  <div className="img">🔥</div>
                   <div className="details">
-                    <div className="about">穿过窄门</div>
-                    <div className="about">步入原野</div>
+                    <div className="about">文火长明​
+                    </div>
+                    <div className="about">字字生辉</div>
                   </div>
                 </div>
               </div>

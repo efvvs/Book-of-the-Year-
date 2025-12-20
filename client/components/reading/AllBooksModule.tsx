@@ -82,6 +82,7 @@ interface SeasonModalProps {
   onBookClick: (book: Book) => void;
 }
 
+// 一级弹窗
 const SeasonModal = ({ season, books, onClose, onBookClick }: SeasonModalProps) => {
   const info = seasonInfo[season || "spring"];
 
@@ -164,7 +165,7 @@ const SeasonModal = ({ season, books, onClose, onBookClick }: SeasonModalProps) 
               >
                 {/* Top section with background image */}
                 <div
-                  className="h-48 md:h-56 relative overflow-hidden"
+                  className="h-55 md:h-56 relative overflow-hidden"
                   style={{
                     backgroundImage: `url(${book.bgUrl})`,
                     backgroundRepeat: 'no-repeat',
@@ -184,21 +185,11 @@ const SeasonModal = ({ season, books, onClose, onBookClick }: SeasonModalProps) 
                   </h3>
 
                   {/* Author and Reading hours */}
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between mb-1">
                     <p className="text-reading-darkgreen font-serif text-xs md:text-sm">
                       {book.author}
                     </p>
-                    <p className="text-xs text-reading-darkgreen font-medium">
-                      {book.readDuration}
-                    </p>
                   </div>
-
-                  {/* Tags */}
-                  {/* <div className="flex flex-wrap gap-2">
-                    <span className="px-2.5 py-1 bg-reading-lightbrown/15 text-reading-lightbrown text-xs rounded-full font-medium border border-reading-lightbrown/20">
-                      {book.type}
-                    </span>
-                  </div> */}
                 </div>
               </div>
             ))}
@@ -506,7 +497,7 @@ export const AllBooksModule = () => {
                 className="cursor-pointer group"
               >
                 <div
-                  className={`bg-gradient-to-br ${info.colors} rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] p-6 md:p-8 h-72 md:h-96 flex flex-col justify-between text-white relative`}
+                  className={`bg-gradient-to-br ${info.colors} rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] p-6 md:p-8 h-80 md:h-96 flex flex-col justify-between text-white relative`}
                 >
                   {/* Background emoji - decorative */}
                   <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
@@ -529,7 +520,7 @@ export const AllBooksModule = () => {
                       </div>
                     </div>
                     <div className="text-right bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/30">
-                      <p className="text-3xl md:text-4xl font-serif font-bold mb-0.5 leading-none">
+                      <p className="text-2xl md:text-2xl font-serif font-bold mb-0.5 leading-none">
                         {count}
                       </p>
                       <p className="text-xs md:text-sm opacity-90 font-medium">
