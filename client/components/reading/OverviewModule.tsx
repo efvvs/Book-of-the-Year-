@@ -36,7 +36,7 @@ export const OverviewModule = () => {
               <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 p-4 md:p-5 border border-reading-beige">
                 <div className="flex items-baseline gap-3">
                 <p className="text-reading-darkblue font-serif text-base md:text-lg font-semibold">读完</p>
-                  <span className="text-4xl md:text-5xl font-bold text-reading-lightbrown">55</span>
+                  <span className="text-4xl md:text-5xl font-bold text-reading-lightbrown">45</span>
                   <p className="text-reading-darkblue font-serif text-base md:text-lg font-semibold">本书</p>
                 </div>
               </div>
@@ -45,14 +45,14 @@ export const OverviewModule = () => {
               <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 p-4 md:p-5 border border-reading-beige">
                 <div className="flex items-baseline gap-3">
                 <p className="text-reading-darkblue font-serif text-base md:text-lg font-semibold">阅读</p>
-                  <span className="text-4xl md:text-5xl font-bold text-reading-darkgreen">247</span>
+                  <span className="text-4xl md:text-5xl font-bold text-reading-darkgreen">254</span>
                   <p className="text-reading-darkblue font-serif text-base md:text-lg font-semibold">小时</p>
                 </div>
               </div>
               <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 p-4 md:p-5 border border-reading-beige">
                 <div className="flex items-baseline gap-3">
                 <p className="text-reading-darkblue font-serif text-base md:text-lg font-semibold">阅读</p>
-                  <span className="text-4xl md:text-5xl font-bold text-reading">283</span>
+                  <span className="text-4xl md:text-5xl font-bold text-reading">303</span>
                   <p className="text-reading-darkblue font-serif text-base md:text-lg font-semibold">天</p>
                 </div>
               </div>

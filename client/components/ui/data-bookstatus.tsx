@@ -12,7 +12,7 @@ export default function() {
 
     const data = [
       { name: '读过', value: 154 },
-      { name: '读完', value: 55 },
+      { name: '读完', value: 45 },
     ];
 
     const option = {
@@ -64,7 +64,7 @@ export default function() {
             left: 'center',          // 水平居中
             top: 'center',           // 垂直居中
             style: {
-              text: `完成率 26%`, // 你要显示的文字
+              text: `完成率 23%`, // 你要显示的文字
               fontSize: 28,          // 字体大小
               fontWeight: 'bold',    // 字体粗细
               fill: '#333',          // 字体颜色（黑色）

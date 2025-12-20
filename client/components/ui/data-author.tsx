@@ -1,102 +1,43 @@
-// import React, { useEffect, useRef } from "react";
-// import * as echarts from "echarts";
-// import '../map/world.json'
-
-// // 示例数据：作者地理分布（可替换后端数据）
-// // 格式：[{ name: "城市/国家", value: [经度, 纬度, 数量] }]
-// const authorData = [
-//   { name: "北京", value: [116.4074, 39.9042, 10] },
-//   { name: "上海", value: [121.4737, 31.2304, 6] },
-//   { name: "纽约", value: [-74.006, 40.7128, 3] },
-//   { name: "伦敦", value: [-0.1276, 51.5074, 4] },
-//   { name: "东京", value: [139.6917, 35.6895, 5] },
-// ];
-
-// export default function() {
-//   const chartRef = useRef(null);
-
-//   useEffect(() => {
-//     const chart = echarts.init(chartRef.current);
-
-//     // 气泡大小缩放函数
-//     const sizeScale = (val) => Math.sqrt(val) * 5 + 5;
-
-//     const option = {
-//       backgroundColor: "#f7f7f7",
-//       tooltip: {
-//         trigger: "item",
-//         formatter: (p) => `${p.name}<br/>作者数量：${p.value[2]}`,
-//       },
-
-//       geo: {
-//         map: "world",
-//         // roam: true, // 可以缩放拖动
-//         itemStyle: {
-//           areaColor: "#e0e0e0",
-//           borderColor: "#999",
-//         },
-//         emphasis: {
-//           itemStyle: {
-//             areaColor: "#c8e6c9",
-//           },
-//         },
-//       },
-
-//       series: [
-//         {
-//           name: "作者分布",
-//           type: "scatter",
-//           coordinateSystem: "geo",
-//           symbolSize: (val) => sizeScale(val[2]),
-//           itemStyle: {
-//             color: "#ff7043",
-//             shadowBlur: 10,
-//             shadowColor: "rgba(0,0,0,0.2)",
-//           },
-//           data: authorData,
-//         },
-//       ],
-//     };
-
-//     chart.setOption(option);
-//     return () => chart.dispose();
-//   }, []);
-
-//   return (
-//     <div>
-//       <div ref={chartRef} style={{ width: '100%', height: '450px'}} />
-//     </div>
-//   );
-// }
-
-
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts";
 import worldJson from "../map/world.json";
 
-// 📊 作者分布数据（国家、经纬度、作者数量）
-
 const authorData = [
-  // 日本
-  { name: "日本", value: [138.2529, 36.2048, 7] },
-  
-  // 中国
-  { name: "中国", value: [104.1954, 35.8617, 11] },
-  
-  // 瑞典
-  { name: "瑞典", value: [18.6435, 60.1282, 5] },
-  
-  // 韩国
-  { name: "韩国", value: [127.7669, 36.9075, 2] },
-  
-  // 英国
-  { name: "英国", value: [-0.118092, 51.509865, 1] },
-  
-  // 法国
-  { name: "法国", value: [2.2137, 46.2276, 2] },
-  
-  // 美国
-  { name: "美国", value: [-95.6650, 39.5000, 4] }
+  { 
+    name: "日本", 
+    value: [138.2529, 36.2048, 7], 
+    color: "rgba(74, 144, 226, 0.85)"  // 蓝色，带透明度
+  },
+  { 
+    name: "中国", 
+    value: [104.1954, 35.8617, 11], 
+    color: "rgba(231, 76, 60, 0.85)"   // 红色，带透明度
+  },
+  { 
+    name: "瑞典", 
+    value: [18.6435, 60.1282, 5], 
+    color: "rgba(155, 89, 182, 0.85)"  // 紫色，带透明度
+  },
+  { 
+    name: "韩国", 
+    value: [127.7669, 36.9075, 2], 
+    color: "rgba(241, 196, 15, 0.85)"  // 黄色/金色，带透明度
+  },
+  { 
+    name: "英国", 
+    value: [-0.118092, 51.509865, 1], 
+    color: "rgba(230, 126, 34, 0.85)"  // 橙色，带透明度
+  },
+  { 
+    name: "法国", 
+    value: [2.2137, 46.2276, 2], 
+    color: "rgba(52, 152, 219, 0.85)"  // 浅蓝色，带透明度
+  },
+  { 
+    name: "美国", 
+    value: [-95.6650, 39.5000, 4], 
+    color: "rgba(46, 204, 113, 0.85)"  // 绿色，带透明度
+  }
 ];
 
 // 作者统计说明：
@@ -108,7 +49,6 @@ const authorData = [
 // 法国 (2)：安托万·德·圣埃克苏佩里(1)，波利娜·阿尔芒日(1)
 // 美国 (4)：史蒂文·普莱斯菲尔德(1)，郎达·拜恩(1)，露露·米勒(1)，摩根·豪泽尔(1)
 
-// 注：部分国家的经纬度坐标为大致位置
 export default function WorldAuthorMap() {
   const chartRef = useRef<HTMLDivElement>(null);
 
@@ -123,28 +63,58 @@ export default function WorldAuthorMap() {
     const option = {
       tooltip: {
         trigger: "item",
+        formatter: (params: any) => {
+          return `
+            <div style="font-weight:bold;margin-bottom:5px">${params.data.name}</div>
+            <div>作者数量：<span style="color:#FF6B6B;font-weight:bold">${params.data.value[2]}</span> 位</div>
+          `;
+        }
       },
+   
       geo: {
         map: "world",
-        // roam: true, // 允许缩放和拖拽
-        zoom: 1.2,
-        center: [0, 20],
+        zoom: 1.3,
+        center: [10, 30],
         itemStyle: {
-          areaColor: "#f0f0f0",
-          borderColor: "#999",
-          borderWidth: 0.5,
+          areaColor: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [{
+              offset: 0, color: 'rgba(52, 152, 219, 0.1)' // 浅蓝
+            }, {
+              offset: 1, color: 'rgba(23, 147, 229, 0.2)' // 深蓝
+            }]
+          },
+          borderColor: 'rgba(255, 255, 255, 0.3)',
+          borderWidth: 1,
+          shadowColor: 'rgba(0, 0, 0, 0.3)',
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowOffsetY: 5
         },
         emphasis: {
           itemStyle: {
-            areaColor: "#389BB7",
-            borderColor: "#333",
-          },
-          label: {
-            show: false,
-          },
+            areaColor: {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [{
+                offset: 0, color: 'rgba(46, 213, 115, 0.3)'
+              }, {
+                offset: 1, color: 'rgba(39, 174, 96, 0.2)'
+              }]
+            },
+            borderColor: '#2ecc71',
+            borderWidth: 1
+          }
         },
         label: {
-          show: false,
+          show: false
         },
       },
       series: [
@@ -155,17 +125,15 @@ export default function WorldAuthorMap() {
           data: authorData.map((item) => ({
             name: item.name,
             value: item.value, // [经度, 纬度, 作者数量]
+            itemStyle: {
+              color: item.color
+            }
           })),
           symbolSize: (val: number[]) => {
             const count = val[2] || 1;
             return Math.max(count * 6, 12);
           },
-          itemStyle: {
-            color: "#FF6B6B",
-            opacity: 0.8,
-            shadowBlur: 10,
-            shadowColor: "rgba(255, 107, 107, 0.5)",
-          },
+          
           emphasis: {
             itemStyle: {
               opacity: 1,

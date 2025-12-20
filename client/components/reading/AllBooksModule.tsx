@@ -5,11 +5,8 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-
-
 
 type Season = "spring" | "summer" | "autumn" | "winter";
 
@@ -491,7 +488,7 @@ export const AllBooksModule = () => {
             </div>
           </div>
           <p className="text-reading-darkgreen font-serif italic text-base md:text-lg">
-            按季节浏览，感受一年四季的阅读之旅
+          “以书为伴，走过我的春夏秋冬。”
           </p>
           <div className="w-12 h-1 bg-reading-lightbrown mx-auto mt-6"></div>
         </div>

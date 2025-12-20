@@ -56,10 +56,10 @@ export default function BookWordCloud() {
             },
             series: [
                 {
-                    // grid: {
-                    //     top: 10,
-                    //     right: 0,
-                    // },
+                    grid: {
+                        top: 10,
+                        right: 0,
+                    },
                     type: 'wordCloud',
                     // 词云的形状（可选）：'circle', 'cardioid', 'diamond', 'triangle-forward', 'triangle', 'pentagon', 'star'
                     shape: 'circle',
@@ -85,12 +85,12 @@ export default function BookWordCloud() {
                         },
                     },
                     // 每个词的最小/最大字号
-                    sizeRange: [45, 100],
+                    sizeRange: [45, 90],
                     // 词之间的间距
                     gridSize: 2,
                     // 是否旋转
-                    //   rotationRange: [-90, 90],
-                    //   rotationStep: 45,
+                    rotationRange: [-90, 90],
+                    rotationStep: 45,
                     // 鼠标交互
                     emphasis: {
                         focus: 'self',

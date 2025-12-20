@@ -44,17 +44,76 @@ import taohuayuanmeishi from '../images/taohuayuanmeishi.jpg'
 import jinqianxinlixue from '../images/jinqianxinlixue.jpg'
 import liangjingshiwuri from '../images/liangjingshiwuri.jpg'
 import shinanzhitu from '../images/shinanzhitu.jpg'
+import haimianyuedufa from '../images/haimianyuedufa.jpg'
+
 
 export interface Book {
+    rank?: number;
     title: string;
     author: string;
     bgUrl: string;
+    recommendation?: string;
     description?: Array<string>;
     readDate?: string;
     readDuration?: string;
     wordCount?: string;
     readDays?: string;
 }
+  
+export const books: Book[] = [
+    {
+        rank: 1,
+        title: '鱼不存在',
+        author: '[美] 露露·米勒',
+        bgUrl: yubucunzai,
+        recommendation: '当一切秩序崩塌时，是什么让我们继续相信重建的意义？',
+        description: [
+            '大卫·斯塔尔·乔丹是斯坦福大学的建校校长，也是一位分类学家，一个执着于给自然世界带来秩序的人——他发现了当时人类已知鱼类的近五分之一。',
+            '但他发现的隐藏生命蓝图越多，宇宙似乎就越想阻止他。他收藏的标本毁于闪电、大火，最终被1906年旧金山地震摧毁——那场地震让近千个装着鱼标本的易碎玻璃罐坠落在地。刹那间，他毕生的收藏毁于一旦。',
+            '其他人可能已经放弃，屈服于绝望。但是乔丹检查了脚下的残骸，找到了他辨认出的第一条鱼，并开始自信地重建他的收藏——他用一根缝衣针将标签缝在鱼身上。当世界陷入混乱，他用一根针来重建秩序。',
+            '记者露露·米勒第一次听到这则逸事时，她把它当作一个傲慢或拒绝接受现实的警示故事。但当她自己的生活慢慢瓦解，她开始对大卫感到好奇。',
+            '她对他的生活的挖掘将改变她对历史、道德和她脚下世界的理解。',
+            '本书是传记、回忆录和科学冒险的奇妙结合，也是一则温暖人心的寓言，讲述了如何在一个混乱永远盛行的世界里坚持下去。'
+        ],
+        readDate: '2025-4',
+        readDuration: '3小时52分钟',
+        wordCount: '约9.6万字',
+        readDays: '5天',
+    },
+    {
+        rank: 2,
+        title: ' 小镇喧嚣',
+        recommendation: '读懂中国，或许要从读懂一个乡镇的权力博弈开始。',
+        author: '[中国] 吴毅',
+        bgUrl: xiaozhenxuanxiao,
+        description: [
+            '基层迎检、开发纷争、征收税费、产业调整、征地“种房”、维权争利……“喧嚣”一词，释尽乡镇日常政治种种人事与结构交织碰撞的众声嘈杂。',
+            '本书以后现代叙事策略，围绕基层政权、村级组织和农民在复杂的乡村权力场域中博弈共生的过程和状况，深度阐释了21世纪初中国中部地区某乡镇“乡域政治”的运作实践与支配逻辑。',
+            '本书出版十年来，获得学术界内外的广泛好评，被权威专家和普通读者誉为数十年来少见的以“抵近现场”“深度描写”的方式、以“比小说还精彩”的叙述来“复杂化理解”中国基层社会的作品。',
+            '重读此书，不难发现，虽然它研究的是十多年前的乡镇，但是，对于“故事”背后种种复杂因素的颇有见地的理论探讨，让它在今天仍然极具启示。'
+        ],
+        readDate: '2025-6',
+        readDuration: '13小时31分钟',
+        wordCount: '约39.3万字',
+        readDays: '27天',
+    },
+    {
+        rank: 3,
+        title: '海绵阅读法',
+        author: '[中国]李小墨',
+        recommendation: '如果你也受困于‘读得慢、忘得快、用不上’，这套阅读系统能帮你打破阅读瓶颈。',
+        bgUrl: haimianyuedufa,
+        description:  [
+            '本书针对大多数人在阅读过程中遇到的问题，如读得慢、忘得快、输出吃力、笔记低效、不会独立思考、不知道如何建立知识体系、无法学以致用、难以养成阅读习惯等，讲解了高效阅读需要的七大能力，致力于提供一套系统的阅读方法。',
+            '本书共分为七章，包括高效做读书笔记的能力、独立思考的能力、掌握阅读速度的能力、阅读不同书籍的能力、建立知识体系的能力、让读书有用的能力、长期持续稳定阅读的能力，旨在帮助读者最大程度吸收一本书的精华，最大程度从阅读中获益。',
+            '本书适合缺乏系统阅读方法，读得慢、忘得快、输出难的学生、职场人，以及有旺盛成长需求、对成长速度不满意、成长遇到瓶颈，想要靠阅读实现自我提升的读者阅读和学习。'
+          ],
+        readDate: '2024年11月',
+        readDuration: '7小时9分钟',
+        wordCount: '约13.9万字',
+        readDays: '10天',
+    },
+];
 export const booksData: Book[] = [
     {
         title: '圣母',
@@ -558,7 +617,7 @@ export const booksData: Book[] = [
         readDays: '4天',
     },
     {
-        title: ' 小镇喧嚣：一个乡镇政治运作的演绎与阐释',
+        title: ' 小镇喧嚣',
         author: '[中国] 吴毅',
         bgUrl: xiaozhenxuanxiao,
         description: [

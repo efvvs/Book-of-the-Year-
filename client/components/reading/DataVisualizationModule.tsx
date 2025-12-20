@@ -253,10 +253,10 @@ export const DataVisualizationModule = () => {
             <div className="tooltip">
               <div className="profile">
                 <div className="user">
-                  <div className="img">🧙‍♂️</div>
+                  <div className="img">🕓</div>
                   <div className="details">
-                    <div className="about">积累阅读</div>
-                    <div className="about">成就非凡</div>
+                    <div className="about">字里行间</div>
+                    <div className="about">时光有痕</div>
                   </div>
                 </div>
               </div>
@@ -335,7 +335,7 @@ export const DataVisualizationModule = () => {
                 🌎 作者地域分布
               </h3>
               <p className="text-reading-darkgreen text-sm md:text-base">
-                “阅读的作者分布，展示对不同地区文化的阅读偏好。”
+                “书籍作者分布，展示对不同地区文化的阅读偏好。”
               </p>
             </div>
             <DataAuthor></DataAuthor>
