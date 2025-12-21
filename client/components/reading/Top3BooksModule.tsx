@@ -155,9 +155,13 @@ export const Top3BooksModule = () => {
                       <span className="w-1 h-7 bg-reading-lightbrown rounded-full"></span>
                       书籍简介
                     </h3>
-                    <p className="text-reading-darkblue/90 leading-relaxed text-base max-h-70 md:max-h-90 overflow-y-auto pr-1">
-                      {selectedBook.description}
-                    </p>
+                    {selectedBook.description.map((item, index) => {
+                      return (
+                        <p key={index} className="text-reading-darkblue/90 leading-relaxed text-base max-h-70 md:max-h-90 overflow-y-auto pr-1">
+                          {item}
+                        </p>
+                      )
+                    })}
                   </div>
                 )}
               </div>

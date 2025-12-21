@@ -23,25 +23,22 @@ export const ContactModule = () => {
       ),
     },
     {
-      name: '微信读书',
+      name: '抖音',
       // url: 'https://twitter.com/efvv',
       social: 'wechat',
       color: '#07c160',
+      url:'https://www.douyin.com/user/MS4wLjABAAAAflNMqfTMR8-7uzQo-yTn-6oIeic-RBCQOUtTuG-B2Z4iY2yRoJpNn0ajlUACT_CO?from_tab_name=main',
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
           height="30"
           viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+          fill="currentColor"
         >
-          <path d="M4 5c3-2 6-2 9 0v14c-3-2-6-2-9 0z" />
-          <path d="M13 5c3-2 6-2 9 0v14c-3-2-6-2-9 0z" />
-          <line x1="13" y1="5" x2="13" y2="19" />
+          <path
+            d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.35V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.302.002.602.062.885.18V8.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 5 14.66a6.34 6.34 0 0 0 12.11-1.83v-6a2.5 2.5 0 0 0 4.78-1c0-.23-.04-.45-.1-.67A4.72 4.72 0 0 1 19.59 6.69z"
+          />
         </svg>
       ),
     },
@@ -93,7 +90,7 @@ export const ContactModule = () => {
         </svg>
       ),
     },
-      
+
   ];
 
   return (
