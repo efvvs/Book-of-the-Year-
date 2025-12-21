@@ -19,7 +19,7 @@ export default function Index() {
             📖 My Reading 2025
           </h1>
           <nav className="hidden md:flex gap-8">
-            <LoadingAnimate></LoadingAnimate>
+            {/* <LoadingAnimate></LoadingAnimate> */}
             {/* <a href="#overview" className="text-reading-darkgreen hover:text-reading-lightbrown transition-colors font-serif">
               年度概览
             </a>
